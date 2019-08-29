@@ -18,17 +18,31 @@ class NotesController < ApplicationController
             redirect_to @note
             flash[:notice] = "Note Created!"
         else
-            flash[:alert] = "There was an error creating your Note"
             render 'new'
+            flash[:alert] = "There was an error creating your Note"
         end
     end
 
     def update
-
+        @note = Note.find(params[:id])
+        if @note.update(note_params)
+            redirect_to @note
+            flash[:notice] = "Note Updated!"
+        else
+            render 'edit'
+            flash[:alert] = "There was an error updating the Note"
+        end
     end
 
     def destroy
-
+        @note = Note.find(params[:id])
+        if @note.destroy
+            redirect_to notes_path
+            flash[:notice] = "Note Deleted!"
+        else
+            render 'show'
+            flash[:alert] = "There was an error deleting the Note"
+        end
     end
 
     private
