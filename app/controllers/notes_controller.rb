@@ -1,7 +1,10 @@
 class NotesController < ApplicationController
 
+    before_action :authenticate_user!
+
+
     def index
-        @notes = Note.all.order("created_at DESC")
+        @notes = current_user.notes.all.order("created_at DESC")
     end
 
     def show
@@ -9,11 +12,11 @@ class NotesController < ApplicationController
     end
 
     def new
-        @note = Note.new
+        @note = current_user.notes.build
     end
 
     def create
-        @note = Note.new(note_params)
+        @note = current_user.notes.build(note_params)
         if @note.save
             redirect_to @note
             flash[:notice] = "Note Created!"
