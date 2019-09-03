@@ -8,7 +8,9 @@ class NotesController < ApplicationController
     end
 
     def show
-        @note = Note.find(params[:id])
+        if Note.find(params[:id]).user == current_user
+            @note = Note.find(params[:id])
+        end
     end
 
     def new
@@ -27,7 +29,11 @@ class NotesController < ApplicationController
     end
 
     def edit
-        @note = Note.find(params[:id])
+        if Note.find(params[:id]).user == current_user
+            @note = Note.find(params[:id])
+        else
+            redirect_to notes_path
+            flash[:notice] = "You do not own this note"
     end
 
     def update
