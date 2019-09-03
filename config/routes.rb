@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     root 'notes#index', as: "authenitcated_root"
   end
 
-  root 'welcome#index'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 
   
   

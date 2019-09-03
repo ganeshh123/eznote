@@ -2,7 +2,6 @@ class NotesController < ApplicationController
 
     before_action :authenticate_user!
 
-
     def index
         @notes = current_user.notes.all.order("created_at DESC")
     end
@@ -34,6 +33,7 @@ class NotesController < ApplicationController
         else
             redirect_to notes_path
             flash[:notice] = "You do not own this note"
+        end
     end
 
     def update
