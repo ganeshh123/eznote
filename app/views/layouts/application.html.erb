@@ -9,15 +9,20 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
 
   <body>
-    <div id="navbar" class="w3-theme">
+    <div id="navbar">
       <h1>ezNote</h1>
       <% if user_signed_in? %>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
+      <div id="menu">
+        <%= link_to destroy_user_session_path, method: :delete,   :class => 'navButton' do%>
+           <i class="far fa-sign-out"></i>
+        <% end %>
+      </div>
       <% end %>      
     </div>
     <% if flash[:notice] %>
@@ -30,8 +35,8 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-    <main>
+    <div id="mainContent">
       <%= yield %>
-    </main>
+    </div>
   </body>
 </html>
