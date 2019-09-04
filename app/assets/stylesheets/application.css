@@ -16,6 +16,30 @@
 
  /* Main Application Styles */
 
+ @import "mobile.css" screen and (max-width: 500px);
+
+ .alert, .notice{
+    color:#fff !important; background-color:#265728 !important
+ }
+
+ 
+
+ .user_remember_me label{
+     margin: auto;
+ }
+
+ .form-actions{
+     width: 90%;
+     margin: auto;
+ }
+
+ input .btn{
+     margin: auto;
+     display: block;
+     margin: auto !important;
+ }
+
+
  *, *:before, *:after{
     margin: 0;
     padding: 0;
@@ -27,9 +51,14 @@
     box-sizing: content-box !important;
 }
 
+body, html{
+    height: 100vh;
+    width: 100vw;
+}
+
  #navbar{
      min-height: 50px;
-     width: 100%;
+     width: 100vw;
      margin: 0px;
      height: 10vh;
  }
@@ -43,8 +72,29 @@
     height: 90vh;
  }
 
+ label{
+     width: 100px;
+ }
+
  input{
-     
+    color:#000 !important;
+    background-color:#f4faf4 !important;
+    margin: 5px 10px 5px 10px !important;
+    min-width: 250px;
+ }
+
+ .centralContainer .input{
+     margin: auto;
+     max-width: 500px;
+     display: flex;
+     flex-direction: row;
+     justify-content: center; 
+ }
+
+ .form-inputs{
+    width: auto;
+    max-width: 90%;
+    margin: auto;
  }
 
  .centralContainer{
@@ -67,3 +117,102 @@
  .centralContainerBox h2{
      text-align: center;
  }
+
+ input .btn{
+    margin: auto;
+    display: block;
+    margin: auto !important;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+    *, *:before, *:after{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        box-sizing: content-box !important;
+    }
+    
+    body, html{
+        height: 100vh;
+        width: 100vw;
+    }
+    label{
+        width: 75px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    #navbar{
+        min-height: 50px;
+        width: 100vw;
+        margin: 0px;
+        height: 10vh;
+    }
+   
+    h1{
+        margin-top: 0px !important;
+    }
+   
+    main{
+        display: flex;
+       height: 90vh;
+    }
+   
+    input{
+       color:#000 !important;
+       background-color:#f4faf4 !important;
+       margin: 5px 10px 5px 10px !important;
+       min-width: 150px;
+       max-width: 300px;
+       width: 90%;
+    }
+   
+    .centralContainer .input{
+        margin: auto;
+        max-width: 500px;
+        width: 95vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    form{
+        margin: auto;
+    }
+   
+    .form-inputs{
+       width: 100%;
+    }
+   
+    .centralContainer{
+       width: 100%;
+       height: 100%;
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+    }
+   
+    .centralContainerBox{
+        border-radius: 5px;
+        min-width: 300px;
+        width: 100%;
+        padding: 5px;
+    }
+   
+    .centralContainerBox h2{
+        text-align: center;
+    }
+
+    h1{
+        margin-top: 0px !important;
+    }
+  }
