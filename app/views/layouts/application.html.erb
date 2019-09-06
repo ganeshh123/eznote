@@ -16,9 +16,14 @@
 
   <body>
     <div id="navbar">
-      <h1>ezNote</h1>
+        <%= link_to root_path do%>
+          <h1>ezNote</h1>
+        <% end %>
       <% if user_signed_in? %>
       <div id="menu">
+        <%= link_to new_note_path, :class => 'navButton' do%>
+          <i class="far fa-file-plus"></i>
+        <% end %>
         <%= link_to destroy_user_session_path, method: :delete,   :class => 'navButton' do%>
            <i class="far fa-sign-out"></i>
         <% end %>
