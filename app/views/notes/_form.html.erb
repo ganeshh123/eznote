@@ -1,5 +1,13 @@
-<%= simple_form_for @note do |n| %>
-    <%= n.input :title, :as => 'string' %>
-    <%= n.input :content %>
-    <%= n.button :submit %>
-<% end %>
+<div class="formContainter">
+    <%= simple_form_for @note do |n| %>
+        <div class="formInput">
+            <!-- <label class="formLabel">Title: </label> -->
+            <%= n.input_field :title, :class => 'titleField', :as => 'string' %>
+        </div>
+        <div class="formInput">
+            <!-- <label class="formLabel">Content: </label> -->
+            <%= n.input_field :content, :class => 'contentField' %>
+        </div>
+        <%= n.button :submit, "Save", :class => 'submitButton'%>
+    <% end %>
+</div>

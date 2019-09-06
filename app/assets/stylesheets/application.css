@@ -58,6 +58,14 @@ body{
     height: 7vh;
 }
 
+.navButton a{
+    text-align: center;
+}
+.navButton i{
+    margin: auto;
+    text-align: center;
+}
+
 #menu{
     float: right;
     padding: 5px;
@@ -162,6 +170,54 @@ body{
 
 /* Notes Views */
 
+.noteView{
+    width: 90vw;
+    max-width: 800px;
+    overflow: auto;
+    border-radius: 5px;
+    color:#000 !important;
+    background-color:#dbefdc !important;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    font-size: 12pt;
+}
+
+.noteView i{
+    font-size: 30px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.noteView p{
+    padding: 10px 20px 10px 20px;
+}
+
+.noteView h2{
+    text-align: center;
+}
+
+
+/* Mobile Styling for Note View */
+@media only screen and (max-width: 600px) {
+    .noteView{
+        font-size: 10pt;
+    }
+
+    .noteView p{
+        padding: 5px 10px 5px 10px;
+    }
+
+    .noteView h2{
+        font-size: 12pt;
+    }
+
+  }
+
 /* Index */
 
 #notesGallery{
@@ -220,3 +276,71 @@ body{
     }
 
   }
+
+/* Note Form Styling */
+
+.formContainer{
+    width: 100%;
+}
+
+.formLabel {
+    font-size: 15pt;
+    margin: 5px 10px 5px 10px;
+}
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.titleField{
+    width: 100%;
+    font-size: 12pt;
+    margin: 10px 0px 10px 0px;
+    padding: 5px 10px 5px 10px;
+    color:#000 !important;
+    background-color:#f4faf4 !important;
+}
+
+.contentField{
+    font-size: 10pt;
+    height: 65vh;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    padding: 5px 10px 5px 10px;
+    color:#000 !important;
+    background-color:#f4faf4 !important;
+
+}
+
+.submitButton{
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    margin: auto;
+    display: block;
+}
+
+/* Mobile Styling for Note Form */
+@media only screen and (max-width: 600px) {
+    .submitButton{
+        font-size: 12pt;
+    }
+
+    .titleField{
+        font-size: 10pt;
+        margin: 5px 0px 5px 0px;
+    }
+
+    .contentField{
+        font-size: 8pt;
+        margin: 5px 0px 5px 0px;
+    }
+
+  }
+
+

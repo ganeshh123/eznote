@@ -1,6 +1,13 @@
-<h1><%= @note.title %></h1>
-<p><%= @note.content %></p>
-<%= link_to 'Edit', edit_note_path(@note) %>
-<%= link_to "Delete", @note, method: "delete", data: { confirm: "Are you sure?"} %>
-<br />
-<%= link_to 'All Notes', notes_path %>
+<div class="oneElement">
+    <div class="noteView"> 
+        <h1><%= @note.title %></h1>
+        <%= link_to edit_note_path(@note) do%>
+            <i class="fal fa-pencil"></i>
+        <% end %>
+        <%= link_to @note, method: "delete", data: { confirm: "Are you sure?"} do%>
+            <i class="fal fa-trash"></i>
+        <% end %>
+        <p><%= simple_format(@note.content) %></p>
+        <br />
+    </div>
+</div >
